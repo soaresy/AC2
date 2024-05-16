@@ -1,0 +1,38 @@
+/* Definição de estilos para a página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilo para a seção de destaque */
+.section-destaque {
+    padding: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* Estilo para a seção de produtos */
+.section-produtos {
+    margin-top: 40px;
+}
+
+/* Estilo para os cards de produtos */
+.card {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
