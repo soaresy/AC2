@@ -1,0 +1,20 @@
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #f0fff1; /* Cor padrão do quadrado */
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d2ffc4;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
