@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+
+    <input type="text" id="taskInput" placeholder="Digite sua tarefa">
+    <button id="addTaskBtn">Adicionar</button>
+
+    <ul id="taskList">
+        <!-- Lista de tarefas será adicionada aqui -->
+    </ul>
+
+    <script>
+        document.getElementById("addTaskBtn").addEventListener("click", function() {
+            // Obter o texto digitado pelo usuário
+            var taskInput = document.getElementById("taskInput");
+            var taskText = taskInput.value;
+
+            // Criar um novo elemento li
+            var newTask = document.createElement("li");
+
+            // Adicionar o texto da tarefa ao novo elemento li
+            newTask.textContent = taskText;
+
+            // Adicionar o novo elemento li à lista de tarefas
+            document.getElementById("taskList").appendChild(newTask);
+
+            // Limpar o campo de entrada após adicionar a tarefa
+            taskInput.value = "";
+        });
+    </script>
+</body>
+</html
