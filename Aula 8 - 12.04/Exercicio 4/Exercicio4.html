@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 150px;
+            padding: 8px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora</h1>
+
+        <input type="number" id="num1" placeholder="Digite o primeiro número">
+        <input type="number" id="num2" placeholder="Digite o segundo número">
+
+        <br>
+
+        <button id="btnSomar">Somar</button>
+        <button id="btnSubtrair">Subtrair</button>
+        <button id="btnDividir">Dividir</button>
+        <button id="btnMultiplicar">Multiplicar</button>
+    </div>
+
+    <script>
+        document.getElementById("btnSomar").addEventListener("click", function() {
+            calculate("soma");
+        });
+
+        document.getElementById("btnSubtrair").addEventListener("click", function() {
+            calculate("subtracao");
+        });
+
+        document.getElementById("btnDividir").addEventListener("click", function() {
+            calculate("divisao");
+        });
+
+        document.getElementById("btnMultiplicar").addEventListener("click", function() {
+            calculate("multiplicacao");
+        });
+
+        function calculate(operation) {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Por favor, digite números válidos em ambos os campos.");
+                return;
+            }
+
+            var result;
+            switch (operation) {
+                case "soma":
+                    result = num1 + num2;
+                    break;
+                case "subtracao":
+                    result = num1 - num2;
+                    break;
+                case "divisao":
+                    if (num2 === 0) {
+                        alert("Impossível dividir por zero.");
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+                case "multiplicacao":
+                    result = num1 * num2;
+                    break;
+                default:
+                    alert("Operação inválida.");
+                    return;
+            }
+
+            alert("O resultado da operação é: " + result);
+        }
+    </script>
+</body>
+</html>
